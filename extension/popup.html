@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ProdTime Tracker</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; width: 320px; padding: 12px; }
+    h3 { margin: 0 0 10px; font-size:18px; }
+    .row { display:flex; justify-content:space-between; align-items:center; margin:8px 0; }
+    .pill { padding:4px 8px; border-radius:999px; border:1px solid #ddd; font-size:12px; }
+    .muted { color:#666; font-size:12px; }
+    #topList > div { display:flex; justify-content:space-between; margin:4px 0; }
+    button { padding:6px 10px; border-radius:8px; border:0; background:#111; color:#fff; cursor:pointer; }
+    a { color:#0b57d0; text-decoration:none; font-size:13px; }
+  </style>
+</head>
+<body>
+  <h3>ProdTime Tracker</h3>
+
+  <div class="row">
+    <label for="pause">Pause tracking</label>
+    <input id="pause" type="checkbox" />
+  </div>
+
+  <div class="row"><span class="muted">Idle</span><span id="idleState" class="pill">-</span></div>
+  <div class="row"><span class="muted">Window</span><span id="focusState" class="pill">-</span></div>
+
+  <hr/>
+
+  <div class="row"><strong>Today</strong><span id="todayTotal">--:--</span></div>
+  <div id="topList" class="muted">Loading...</div>
+
+  <div style="margin-top:10px; display:flex; gap:8px;">
+    <button id="refresh">Refresh</button>
+    <button id="upload">Upload Now</button>
+    <a id="options" href="#">Options</a>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
